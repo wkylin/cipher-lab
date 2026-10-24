@@ -34,7 +34,9 @@
     "@types/koa-static": "^4.0.4",
     "@types/node": "^24.0.0",
     "@vitejs/devtools": "^0.8.0",
+    "@vitejs/devtools-vitest": "^0.8.0",
     "@vitejs/plugin-vue": "^6.0.10",
+    "@vitest/ui": "^5.0.5",
     "code-inspector-plugin": "^2.0.9",
     "concurrently": "^9.0.0",
     "fast-glob": "^3.3.3",
@@ -45,6 +47,7 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-inspect": "^12.1.0",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vitest": "^5.0.5",
     "vue-tsc": "^3.0.0"
   }
 }
