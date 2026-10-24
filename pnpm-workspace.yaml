@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: true
+  node-pty: true
+
+# vite-plugin-svg-icons 2.0.1 使用 fast-glob，却未声明该依赖。
+packageExtensions:
+  'vite-plugin-svg-icons@2.0.1':
+    dependencies:
+      fast-glob: ^3.3.3

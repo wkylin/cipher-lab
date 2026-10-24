@@ -1,0 +1,51 @@
+/* Shared by LabInput and LabTextarea. The native field is the only border. */
+.lab-text-control {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid #30465c;
+  border-radius: 6px;
+  background: #081724;
+  color: #b4ccdc;
+  /* Keep editable text at 16px on touch screens, including compact variants. */
+  font: max(16px, var(--control-font-size, 16px))/1.65 var(--mono, monospace);
+  caret-color: #58d9f4;
+  outline: none;
+  box-shadow: none;
+  transition: border-color .16s ease, background-color .16s ease;
+}
+
+.lab-text-control::placeholder { color: #688399; opacity: 1; }
+.lab-text-control::selection { background: #58d9f433; color: #e5f8fc; }
+.lab-text-control:hover:where(:not(:disabled):not(:read-only)) { border-color: #4b7087; }
+
+/* Change the existing 1px border only: no outer ring, offset, or glow. */
+.lab-text-control:focus,
+.lab-text-control:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+  border-color: #428da3;
+  background: #0b1d2c;
+}
+
+.lab-text-control[aria-invalid="true"] { border-color: #d48880; }
+.lab-text-control:disabled { opacity: .45; cursor: not-allowed; }
+.lab-text-control:read-only:not(:disabled) { color: #8fa8bc; }
+.lab-input { height: max(48px, var(--control-height, 48px)); padding-block: 0; }
+.lab-input--small { height: max(44px, var(--control-height, 44px)); padding-inline: 10px; }
+.lab-textarea { min-height: 112px; max-width: 100%; overflow: auto; scrollbar-width: thin; scrollbar-color: #36576c transparent; }
+
+@media (min-width: 1024px) and (pointer: fine) {
+  .lab-text-control { font-size: max(13px, var(--control-font-size, 13px)); }
+  .lab-input { height: max(40px, var(--control-height, 40px)); }
+  .lab-input--small { height: max(36px, var(--control-height, 36px)); font-size: max(12px, var(--control-font-size, 12px)); }
+  .lab-textarea { min-height: 88px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-text-control { transition: none; }
+}

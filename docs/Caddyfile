@@ -1,0 +1,6 @@
+# Replace the domain with a domain you control. Point DNS at your server.
+# Caddy obtains and renews a publicly trusted certificate automatically.
+crypto.example.com {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8787
+}
