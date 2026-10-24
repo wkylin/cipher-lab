@@ -56,6 +56,10 @@ npm start
 
 `npm start` 启动 Koa，并提供已构建的 `dist`。部署时必须在它前面放置 HTTPS 反向代理，例如 [Caddy 示例](docs/Caddyfile)。回环 HTTP 是本地代理到应用的内部连接。生产环境应按部署拓扑决定该段是否也需要 TLS。
 
+Vercel 的完整部署步骤、Function 入口、rewrite、环境变量和验证命令见 [Vercel 部署文档](docs/VERCEL_DEPLOYMENT.md)。
+
+想沿着一次请求读懂应用层加密的完整链路，可阅读 [从业务数据到 JWE，再回到页面](docs/APPLICATION_ENCRYPTION_BLOG.md)。
+
 ## 预览构建产物
 
 先运行 `pnpm build`（或 `npm run build`）生成 `dist`。
@@ -345,6 +349,7 @@ GET / HEAD / OPTIONS 统一将加密上下文放在请求头，不能带业务 b
 | `src/App.vue` | 交互、响应式数据和渲染 |
 | `tests/integration.test.ts` | 端到端方法矩阵、数据类型和异常边界 |
 | [协议说明](docs/PROTOCOL.md) | 密钥职责、JWE 结构、GET/HEAD 语义、安全边界 |
+| [应用层加密 Blog](docs/APPLICATION_ENCRYPTION_BLOG.md) | 从业务数据装箱到请求/响应 JWE 的完整流程 |
 
 ## 演示边界
 
